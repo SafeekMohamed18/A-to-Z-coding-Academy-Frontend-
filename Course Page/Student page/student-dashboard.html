@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student- A to Z</title>
+    <link rel="stylesheet" href="./studentStyle.css">
+    <link rel="shortcut icon" href="../Admin/image/icon.jpg" type="image/x-icon">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Fond Awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+    <nav class="navbar bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bolder">Coding Accadamy</a>
+            <!-- <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> -->
+            <div class="d-flex">
+                <a class="me-3 text-white" href="https://www.instagram.com/imthath_imt?igsh=MW1pOW10aHN5aTA1dw=="><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a class="me-3 text-white" href="https://x.com/imthath_imt?t=DwbcRg6h_NHAZDOq7o_Vyw&s=09"><i
+                        class="fa-brands fa-twitter">
+                    </i></a>
+                <a class="me-3 text-white" href="https://www.facebook.com/imthath.imt?mibextid=ZbWKwL"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a class="me-3 text-white"
+                    href="https://www.linkedin.com/in/mohamed-imthath-006a62270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                        class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="d-flex mt-4">
+        <div class="d-flex flex-column flex-shrink-0 p-3  mt-4" style="width: 280px; height: 100vh;">
+            <div class="sidebar d-flex flex-column bg-dark"
+                style="width: 250px; height: 100vh; position: fixed; top: 0; left: 0; padding-top: 20px;">
+                <div class="text-center mb-4 mt-5">
+                    <img src="../Admin/image/icon-removebg-preview.png" class="nav-logo" alt="Logo"
+                        style="width: 100px;">
+                </div>
+                <div class="nav-menu">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link custom-link"><i class="fa-solid fa-house-user"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#profile" class="nav-link custom-link"><i class="fa-solid fa-user"></i> Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#courses" class="nav-link custom-link"><i class="fa-solid fa-robot"></i>
+                                Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#notification" class="nav-link custom-link"><i class="fa-solid fa-envelope"></i>
+                                Notification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#payment" class="nav-link custom-link"><i class="fa-regular fa-money-bill-1"></i>
+                                Payment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../../course lending/lending_page.html"
+                                class="nav-link custom-link position-absolute bottom-0 end-0"> <i
+                                    class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div style="width: 100%; height: 100vh;" class="mt-5 m-4 container">
+            <section id="home">
+                <h2 class="text-center mb-3 fs-1">Welcome To The World Of Coding With The Best Educators</h2>
+                <div class="card ">
+                    <div class="card-body">
+                        <p class="lh-lg"><b>A to Z Institution</b>, where excellence in education meets innovation. We
+                            offer
+                            comprehensive programs and personalized support from A to Z, empowering students to achieve
+                            their
+                            fullest potential. Our dedicated faculty and cutting-edge resources ensure a transformative
+                            learning
+                            experience tailored to your success.</p>
+                    </div>
+                </div>
+
+                <hr>
+                       <div>
+                        <h2 id="greeting" class="studentGreeting" ></h2>
+                       </div> 
+
+                <hr>
+
+                <section class="container m-5">
+
+                    <h2>Available Courses</h2>
+
+                    <div class="container mt-2">
+                        <div class="row" id="card-row">
+
+                        </div>
+                    </div>
+
+                    <!-- Payment Plan Modal -->
+                    <div class="modal fade" id="paymentPlanModal" tabindex="-1" aria-labelledby="paymentPlanModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="paymentPlanModalLabel">Payment Plan</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p id="courseDetails"></p>
+                                    <div class="mb-3">
+                                        <label for="paymentPlanSelect" class="form-label">Select Payment Plan</label>
+                                        <select id="paymentPlanSelect" class="form-select">
+                                            <option value="FullPayment">Full Payment</option>
+                                            <option value="Installment">Installment</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="confirmEnroll()">Confirm</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alert model -->
+                    <div class="modal fade " id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered ">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title text-danger" id="alertModalLabel">A-Z Coding Accadamy</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body fs-4" id="alertMessage">
+                                    You have already enrolled in this course.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- <marquee behavior="" direction="right">If you like to follow these courses, contact admin for more details</marquee> -->
+                </section>
+            </section>
+            <hr>
+            <hr>
+            <!-- Profile Card -->
+            <Section id="profile" class="container">
+                <h2 class="">Profile</h2>
+
+                <div class="card">
+                    <div class="card-body ">
+                        <div class="row mb-3">
+                            <div class="col-3 text-center"><label for="profileNameDisplay" class="form-label">Full Name :</label></div>
+                            <div class="col-6"> <input type="text" id="profileNameDisplay" class="form-control" value="Loading..." readonly></div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-3 text-center"><label for="profileNICDisplay" class="form-label">NIC Number :</label></div>
+                            <div class="col-6"> <input type="text" id="profileNICDisplay" class="form-control" value="Loading..." readonly></div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-3 text-center"><label for="profileEmailDisplay" class="form-label">Email :</label></div>
+                            <div class="col-6"> <input type="email" id="profileEmailDisplay" class="form-control" value="Loading..." readonly></div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-3 text-center"><label for="profilePhoneDisplay" class="form-label">Phone Number :</label></div>
+                            <div class="col-6"> <input type="text" id="profilePhoneDisplay" class="form-control" value="Loading..." readonly></div>
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-warning" onclick="openUpdateProfileModal()"><i class="fa-solid fa-user-pen"></i></button>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+
+                <!-- Modal Popup Form -->
+                <div class="modal fade" id="updateProfileModal" tabindex="-1" aria-labelledby="updateProfileModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="updateProfileModalLabel">Update Profile</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="updateProfileNIC" class="form-label">NIC Number:</label>
+                                    <input type="text" id="updateProfileNIC" class="form-control" disabled>
+                                    <small class="form-text text-danger">You cant edit NIC number</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="updateProfileName" class="form-label">Full Name:</label>
+                                    <input type="text" id="updateProfileName" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="updateProfileEmail" class="form-label">Email:</label>
+                                    <input type="email" id="updateProfileEmail" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="updateProfilePhone" class="form-label">Phone:</label>
+                                    <input type="text" id="updateProfilePhone" class="form-control">
+                                </div>
+
+                                <div id="loadingMessage" class="text-warning" style="display:none;">Updating profile...</div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-success" onclick="updateProfile()">Save Changes</button>
+                                <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </Section>
+
+
+            <hr>
+            <hr>
+            <section id="courses" class="container">
+                <!-- Courses Section -->
+                <div class="section" id="courses">
+                    <h2>My Courses</h2>
+                    <table id="studentCoursesTable">
+                        <thead>
+                            <tr>
+                                <th>Course ID</th>
+                                <th>Name</th>
+                                <th>Period</th>
+                                <th>Level</th>
+                                <th>Fee</th>
+                                <th>Payment Plan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <hr>
+            <hr>
+            <section id="notification" class="container">
+                <!-- Notifications Section -->
+                <div class="section" id="notifications">
+                    <h2>Notifications</h2>
+                    <table id="notificationTable" class="">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Massage</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notificationData">
+                            
+                        </tbody>
+                    </table>
+
+                </div>
+            </section>
+            <hr>
+            <hr>
+            <section id="payment" class="container">
+                <div class="section" id="payments">
+                    <h2>My Payments</h2>
+                    <table id="studentPaymentsTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Course</th>
+                                <th>Amount Paid</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paymentDetails">
+                            <!-- Payment data will be populated here -->
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <hr>
+            <hr>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Script links -->
+    <script src="./studentScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
