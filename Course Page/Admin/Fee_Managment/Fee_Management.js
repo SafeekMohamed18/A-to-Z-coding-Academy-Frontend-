@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let paidAmount = 0;
 
     // Fetch all courses
-    fetch('https://localhost:7008/api/Course/GetAllCourses')
+    fetch('http://localhost:5000/api/Course/GetAllCourses')
         .then(response => response.json())
         .then(data => {
             courses = data;
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to fetch course by ID
     function fetchCourseById(courseId) {
-        fetch(`https://localhost:7008/api/Course/GetById/${courseId}`)
+        fetch(`http://localhost:5000/api/Course/GetById/${courseId}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (nic) {
             try {
                 // Fetch enrollment details
-                const response = await fetch(`https://localhost:7008/api/Enrollment/by-nic/${nic}`);
+                const response = await fetch(`http://localhost:5000/api/Enrollment/by-nic/${nic}`);
                 const data = await response.json();
                 enrollmentDetails = data;
                
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     const fetchCoursePromises = enrollmentDetails.map(async enrollment => {
                         try {
-                            const courseResponse = await fetch(`https://localhost:7008/api/Course/GetById${enrollment.courseId}`);
+                            const courseResponse = await fetch(`http://localhost:5000/api/Course/GetById${enrollment.courseId}`);
                             const course = await courseResponse.json();
                             const option = document.createElement('option');
                             option.value = enrollment.id; // Set value to EnrollmentId
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectEnrollId) {
             try {
                 // Fetch payment history
-                const response = await fetch(`https://localhost:7008/api/Payment/GetByEnrollment/${selectEnrollId}`);
+                const response = await fetch(`http://localhost:5000/api/Payment/GetByEnrollment/${selectEnrollId}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
                  let enrollment = ""
 
                 try {
-                    const response = await fetch(`https://localhost:7008/api/Enrollment/Get-enrollmetnt-By${selectEnrollId}`);
+                    const response = await fetch(`http://localhost:5000/api/Enrollment/Get-enrollmetnt-By${selectEnrollId}`);
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
                     }
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Check if enrollment ID exists
-        fetch(`https://localhost:7008/api/Enrollment/Get-enrollmetnt-By${enrollmentID}`)
+        fetch(`http://localhost:5000/api/Enrollment/Get-enrollmetnt-By${enrollmentID}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Enrollment ID does not exist');
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 console.log("Submitting payment data:", paymentData);
 
-                fetch('https://localhost:7008/api/Payment/Create-Payment', {
+                fetch('http://localhost:5000/api/Payment/Create-Payment', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fetching payment details
     document.getElementById('student-payment-details').addEventListener('click', function () {
-        fetch('https://localhost:7008/api/Payment/Get-All-Payments')
+        fetch('http://localhost:5000/api/Payment/Get-All-Payments')
             .then(response => response.json())
             .then(data => {
                 const tbody = document.querySelector('#payment-details-table tbody');

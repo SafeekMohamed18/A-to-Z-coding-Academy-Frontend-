@@ -1,4 +1,4 @@
-const ContactUsURL = 'https://localhost:7008/api/ContactUs/CreateContactUs';
+const ContactUsURL = 'http://localhost:5000/api/ContactUs/CreateContactUs';
 
 async function AddContactUs(ContactUsDetails) {
     try {

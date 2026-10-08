@@ -13,7 +13,7 @@ toggleClose.addEventListener("click", function () {
 
 // Retrieve students data
 let students = [];
-const GetAllStudentsURL = 'https://localhost:7008/api/Student/Get-All-Students';
+const GetAllStudentsURL = 'http://localhost:5000/api/Student/Get-All-Students';
 
 async function GetAllStudents() {
     try {
@@ -29,7 +29,7 @@ async function GetAllStudents() {
 GetAllStudents();
 
 // Add Student in Database
-const AddStudentURL = 'https://localhost:7008/api/Student/Add-Student';
+const AddStudentURL = 'http://localhost:5000/api/Student/Add-Student';
 
 async function AddStudent(studentData) {
     try {
@@ -50,7 +50,7 @@ async function AddStudent(studentData) {
 }
 
 // Update Student Contact Details
-const UpdateStudentURL = 'https://localhost:7008/api/Student/Update-Student';
+const UpdateStudentURL = 'http://localhost:5000/api/Student/Update-Student';
 
 async function UpdateStudent(StudentNic, StudentUpdateData) {
     try {
@@ -82,7 +82,7 @@ async function UpdateStudent(StudentNic, StudentUpdateData) {
 // Delete Student From Database
 async function DeleteStudent(nic) {
     try {
-        const response = await fetch(`https://localhost:7008/api/Student/Delete-student/${nic}`, {
+        const response = await fetch(`http://localhost:5000/api/Student/Delete-student/${nic}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'

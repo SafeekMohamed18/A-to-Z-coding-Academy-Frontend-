@@ -2,7 +2,7 @@
 const form = document.getElementById("course-offerings-form");
 async function fetchCourses() {
     try {
-        const response = await fetch('https://localhost:7008/api/Course/GetAllCourses');
+        const response = await fetch('http://localhost:5000/api/Course/GetAllCourses');
         const courses = await response.json();
         const tableBody = document.getElementById('table-body-courses');
         tableBody.innerHTML = ''; // Clear previous entries
@@ -40,7 +40,7 @@ fetchCourses();
 async function deleteCourse(courseId) {
     if (confirm("Are you sure you want to delete this course?")) {
         try {
-            const response = await fetch(`https://localhost:7008/api/Course/Delete${courseId}`, {
+            const response = await fetch(`http://localhost:5000/api/Course/Delete${courseId}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ async function deleteCourse(courseId) {
 // Function to edit a course
 async function editCourse(courseId) {
     try {
-        const response = await fetch(`https://localhost:7008/api/Course/GetById${courseId}`);
+        const response = await fetch(`http://localhost:5000/api/Course/GetById${courseId}`);
         if (!response.ok) {
             throw new Error('Failed to fetch course details');
         }
@@ -109,7 +109,7 @@ document.getElementById('course-offerings-form').addEventListener('submit', asyn
         let response;
         if (courseId) {
             // Update course
-            response = await fetch(`https://localhost:7008/api/Course/Update${courseId}`, {
+            response = await fetch(`http://localhost:5000/api/Course/Update${courseId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ document.getElementById('course-offerings-form').addEventListener('submit', asyn
             });
         } else {
             // Create course
-            response = await fetch('https://localhost:7008/api/Course/Create-Course', {
+            response = await fetch('http://localhost:5000/api/Course/Create-Course', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

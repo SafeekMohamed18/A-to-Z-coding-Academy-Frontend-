@@ -10,7 +10,7 @@ toggleClose.addEventListener("click", function () {
     sideNavbar.style.right = "-60%";
 });
 
-const BASE_URL = 'https://localhost:7008/api';
+const BASE_URL = 'http://localhost:5000/api';
 const GetAllStudentsURL = `${BASE_URL}/Student/Get-All-Students`;
 const GetAllCoursesURL = `${BASE_URL}/Course/GetAllCourses`;
 const GetEnrollmentsByNICURL = `${BASE_URL}/Enrollment/by-nic/`;
@@ -45,7 +45,7 @@ async function GetAllCourses() {
 }
 // Fetch course details by ID
 async function fetchCourseById(courseId) {
-    const response = await fetch(`https://localhost:7008/api/Course/GetById${courseId}`);
+    const response = await fetch(`http://localhost:5000/api/Course/GetById${courseId}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -63,7 +63,7 @@ async function getCourse(CourseId) {
 
 // Fetch enrollment details by ID
 async function fetchEnrollmentById(enrollmentId) {
-    const response = await fetch(`https://localhost:7008/api/Enrollment/Get-enrollmetnt-By${enrollmentId}`);
+    const response = await fetch(`http://localhost:5000/api/Enrollment/Get-enrollmetnt-By${enrollmentId}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }

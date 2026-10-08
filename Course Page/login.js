@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     let students = [];
-    const GetAllStudentsURL = 'https://localhost:7008/api/Student/Get-All-Students';
+    const GetAllStudentsURL = 'http://localhost:5000/api/Student/Get-All-Students';
     
     async function GetAllStudents() {
         try {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await GetAllStudents();
 
     let admins = [];
-    const GetAllAdminsURL = 'https://localhost:7008/api/Admin';
+    const GetAllAdminsURL = 'http://localhost:5000/api/Admin';
     
     async function GetAllAdmins() {
         try {

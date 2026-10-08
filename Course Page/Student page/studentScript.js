@@ -4,7 +4,7 @@ const Greeting = document.getElementById("greeting");
 
 
 async function fetchStudentData(nic) {
-    const response = await fetch(`https://localhost:7008/api/Student/Get-StudentByNIC${nic}`);
+    const response = await fetch(`http://localhost:5000/api/Student/Get-StudentByNIC${nic}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -13,7 +13,7 @@ async function fetchStudentData(nic) {
 
 // Fetch all courses
 async function fetchCourses() {
-    const response = await fetch('https://localhost:7008/api/Course/GetAllCourses');
+    const response = await fetch('http://localhost:5000/api/Course/GetAllCourses');
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -22,7 +22,7 @@ async function fetchCourses() {
 
 // Fetch notifications by NIC
 async function fetchNotifications(nic) {
-    const response = await fetch(`https://localhost:7008/api/Notification/by-nic/${nic}`);
+    const response = await fetch(`http://localhost:5000/api/Notification/by-nic/${nic}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -31,7 +31,7 @@ async function fetchNotifications(nic) {
 
 // Fetch enrollments for the student by NIC
 async function fetchEnrollmentsByNic(nic) {
-    const response = await fetch(`https://localhost:7008/api/Enrollment/by-nic/${nic}`);
+    const response = await fetch(`http://localhost:5000/api/Enrollment/by-nic/${nic}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -59,7 +59,7 @@ async function getCourse(CourseId) {
 }
 // Fetch course details by course ID
 async function fetchCourseData(CourseId) {
-    const response = await fetch(`https://localhost:7008/api/Course/GetById${CourseId}`);
+    const response = await fetch(`http://localhost:5000/api/Course/GetById${CourseId}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -67,7 +67,7 @@ async function fetchCourseData(CourseId) {
 }
 
 async function fetchAllCourseData() {
-    const response = await fetch(`https://localhost:7008/api/Course/GetAllCourses`);
+    const response = await fetch(`http://localhost:5000/api/Course/GetAllCourses`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -76,7 +76,7 @@ async function fetchAllCourseData() {
 
 // Fetch payment details by NIC
 async function fetchPaymentByNic(nic) {
-    const response = await fetch(`https://localhost:7008/api/Payment/GetByNIC/${nic}`);
+    const response = await fetch(`http://localhost:5000/api/Payment/GetByNIC/${nic}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -85,7 +85,7 @@ async function fetchPaymentByNic(nic) {
 
 // Fetch enrollment details by ID
 async function fetchEnrollmentById(enrollmentId) {
-    const response = await fetch(`https://localhost:7008/api/Enrollment/Get-enrollmetnt-By${enrollmentId}`);
+    const response = await fetch(`http://localhost:5000/api/Enrollment/Get-enrollmetnt-By${enrollmentId}`);
     console.log(`Fetching enrollment for ID: ${enrollmentId}`); // Log the URL
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -95,7 +95,7 @@ async function fetchEnrollmentById(enrollmentId) {
 
 // Fetch course details by ID
 async function fetchCourseById(courseId) {
-    const response = await fetch(`https://localhost:7008/api/Course/GetById${courseId}`);
+    const response = await fetch(`http://localhost:5000/api/Course/GetById${courseId}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -162,7 +162,7 @@ function PlanPopup(CourseId) {
 
             if (loggedNic) {
                 // Fetch enrollment details using the logged NIC
-                fetch(`https://localhost:7008/api/Enrollment/by-nic/${loggedNic}`)
+                fetch(`http://localhost:5000/api/Enrollment/by-nic/${loggedNic}`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok');
@@ -218,7 +218,7 @@ async function confirmEnroll() {
     };
 
     try {
-        const response = await fetch('https://localhost:7008/api/Enrollment/Create-Enrollment', {
+        const response = await fetch('http://localhost:5000/api/Enrollment/Create-Enrollment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -350,7 +350,7 @@ async function updateProfile() {
         const loadingMessage = document.getElementById('loadingMessage');
         loadingMessage.style.display = 'block'; // Show loading message
 
-        const response = await fetch(`https://localhost:7008/api/Student/Update-Student/${nic}`, {
+        const response = await fetch(`http://localhost:5000/api/Student/Update-Student/${nic}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
@@ -453,7 +453,7 @@ async function loadNotifications() {
 ///Delete function for notification message
 async function deleteNotification(notificationId) {
     try {
-        const response = await fetch(`https://localhost:7008/api/Notification/Delete${notificationId}`, {
+        const response = await fetch(`http://localhost:5000/api/Notification/Delete${notificationId}`, {
             method: 'DELETE',
         });
 

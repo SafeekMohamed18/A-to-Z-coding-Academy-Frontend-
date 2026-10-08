@@ -14,8 +14,8 @@ toggleClose.addEventListener("click", function () {
 
 
 ////////////////////////////////////////////////////////////
-const contactUsURL = 'https://localhost:7008/api/ContactUs/GetAll';
-const deleteURL = 'https://localhost:7008/api/ContactUs/Delete'
+const contactUsURL = 'http://localhost:5000/api/ContactUs/GetAll';
+const deleteURL = 'http://localhost:5000/api/ContactUs/Delete'
 
 
 
@@ -106,7 +106,7 @@ document.getElementById('notificationForm').addEventListener('submit', async fun
     console.log('Request Data:', JSON.stringify(data)); // Log the data being sent
 
     try {
-        const response = await fetch('https://localhost:7008/api/Notification/CreateNotification', {
+        const response = await fetch('http://localhost:5000/api/Notification/CreateNotification', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
