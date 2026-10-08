@@ -24,17 +24,16 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    padding-top: 60px;
-    /* Space for the fixed navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: var(--background);
-    color: var(--on-primary);
+    color: var(--text);
 }
 
 /* Navbar Styling */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -55,7 +54,8 @@ body {
 }
 
 .navbar .logo img {
-    width: 10%;
+    width: 40px;
+    flex: 0 0 40px;
 }
 
 .navbar .nav-links {
@@ -82,35 +82,29 @@ body {
 
 /* Login Form */
 .main {
-    padding-top: 90px;
+    flex: 1;
+    min-height: 0;
+    padding: clamp(24px, 7vh, 72px) 16px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* width: 100vh; */
-
 }
 
 .container {
-    max-width: 100%;
-    width: 25%;
-
-}
-
-.container {
-    width: 18%;
+    width: min(100%, 420px);
     background: var(--card);
     border-radius: 20px;
-    padding: 25px 35px;
-    border: 1px solid var(--muted);
+    padding: 28px 32px;
+    border: 1px solid var(--border);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    box-sizing: border-box;
+    margin: 0;
 }
 
 .container .header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
     padding-left: 10px;
 }
 
@@ -132,6 +126,7 @@ body {
     font-weight: 600;
     font-size: 24px;
     color: var(--text);
+    line-height: 1.35;
     margin-bottom: 20px;
 }
 
@@ -152,12 +147,12 @@ label {
 
 input {
     width: 100%;
-    background: var(--background);
+    background: var(--surface-alt);
     border: none;
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border: 2px solid transparent;
+    border: 2px solid var(--border);
     margin-top: 5px;
     box-sizing: border-box;
 }
@@ -168,7 +163,7 @@ input::placeholder {
 
 input:focus {
     outline: none;
-    border-color: var(--accent);
+    border-color: var(--primary);
 }
 
 .login-btn {
@@ -176,7 +171,7 @@ input:focus {
     width: 100%;
     font-weight: bold;
     background: var(--primary);
-    color: var(--text);
+    color: var(--on-primary);
     padding: 15px;
     margin: 20px 0;
     border-radius: 20px;
@@ -187,7 +182,7 @@ input:focus {
 }
 
 .login-btn:hover {
-    background: var(--accent);
+    background: var(--primary-hover);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
@@ -200,19 +195,45 @@ input:focus {
 
 .display-message {
     margin-top: 20px;
-    color: var(--accent);
+    color: var(--danger);
     font-size: 14px;
     text-align: center;
 }
 
 @media (max-width: 600px) {
     .container {
-        padding: 15px;
-        max-width: 90%;
+        padding: 22px;
+    }
+
+    .navbar {
+        padding: 10px 14px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .navbar .logo h1 {
+        font-size: 18px;
+    }
+
+    .navbar .nav-links li {
+        margin-left: 12px;
+    }
+
+    .navbar .nav-links li a {
+        font-size: 14px;
     }
 
     .heading {
         font-size: 20px;
+    }
+
+    .footer .footer {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer img {
+        width: 56px;
     }
 }
 
@@ -220,20 +241,10 @@ input:focus {
 .footer {
     background-color: var(--card);
     color: var(--text);
-    padding: px 20px;
+    padding: 12px 20px;
     text-align: center;
-    margin-top: 100px;
-    /* You may want to adjust or remove this */
-    position: fixed;
-    /* Fix the footer to the bottom */
-    bottom: 0;
-    /* Align it to the bottom */
-    left: 0;
-    /* Align it to the left */
+    margin-top: 0;
     width: 100%;
-    /* Full width */
-    z-index: 1000;
-    /* Ensure it appears above other content */
 }
 
 footer h1 {
@@ -241,7 +252,7 @@ footer h1 {
 }
 
 footer img {
-    width: 20%;
+    width: 72px;
     transition: transform 1s ease;
 }
 
@@ -254,6 +265,7 @@ footer .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 16px;
 }
 
 .social-icon {
