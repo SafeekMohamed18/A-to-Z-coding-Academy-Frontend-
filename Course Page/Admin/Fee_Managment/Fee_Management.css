@@ -1,3 +1,20 @@
+:root {
+    --background: #F8FAFC;
+    --card: #FFFFFF;
+    --primary: #2563EB;
+    --accent: #F97316;
+    --text: #0F172A;
+    --muted: #64748B;
+    --surface-alt: #EFF6FF;
+    --border: #E2E8F0;
+    --primary-hover: #1D4ED8;
+    --accent-hover: #EA580C;
+    --success: #16A34A;
+    --danger: #DC2626;
+    --on-primary: #FFFFFF;
+    --on-accent: #0F172A;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -7,15 +24,15 @@
 
 body{
     height: 100vh;
-    background-color: rgb(128, 140, 153);
+    background-color: var(--background);
 }
 /* Navebar */
 
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: #4b0000; /* Maroon background */
-    color: #fff;
+    background-color: var(--card);
+    color: var(--text);
     align-items: center;
     padding: 10px 25px;
     height: 90px;
@@ -28,7 +45,7 @@ nav{
 }
 
 .navbar .logo h1 {
-    color: #fff;
+    color: var(--text);
 }
 .navbar .logo img{
     width: 10%;
@@ -44,7 +61,7 @@ nav{
 
 .fa-bars{
     cursor: pointer;
-    color: #fff;
+    color: var(--text);
 }
 .fa-bars:active{
     scale: 0.9;
@@ -55,12 +72,12 @@ nav{
 .side-navebar{
     width: 20%;
     height: 100%;
-    background-color:#1d232c;
+    background-color: var(--card);
     position: fixed;
     top: 0;
     right: -60%;
     padding: 20px;
-    color: white;
+    color: var(--text);
     transition: 1s;
     margin: 0;
     z-index: 5;
@@ -85,7 +102,7 @@ nav{
 }
 .side-navebar-link a{
     text-decoration: none;
-    color: white;
+    color: var(--text);
     font-size: 1.4rem;
     cursor: pointer;
     transition: transform 0.3s, color 0.3s; /* Add transition for smooth effect */
@@ -93,7 +110,7 @@ nav{
 }
 
 .side-navebar-link a:hover {
-    color: red; /* Change color to red on hover */
+    color: var(--accent);
      transform: scale(1.1); /* Scale up the link on hover */
     
 }
@@ -103,14 +120,14 @@ a:hover::after{
     width: 100%;
 }
 .logout > a{
-    color: red;
+    color: var(--accent);
 }
 
 
 /* Form */
 
 #main-container  h2{
-    color: maroon;
+    color: var(--text);
     letter-spacing: 2px;
     
 
@@ -118,7 +135,7 @@ a:hover::after{
 #fee-management{
     /* margin-top: 120px; */
   /* margin: auto;   */
-  background-color: rgba(208, 209, 212, 0.438);
+    background-color: var(--card);
   /* padding: 30px 50px 50px 50px; */
   border-radius: 10px;
   width: 750px;
@@ -141,7 +158,7 @@ input , select{
     padding: 0.5rem;
     font-size: 1rem;
     border: none;
-    color: #000000;
+    color: var(--text);
     text-decoration: line;
     outline: none;
     border-radius: 5px;
@@ -149,10 +166,10 @@ input , select{
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 select option{
-    color: #000000;
+    color: var(--text);
 }
 input:focus,select:focus{
-    border: 1.9px solid #007bff;
+    border: 1.9px solid var(--primary);
 }
 
 #button-container{
@@ -162,8 +179,8 @@ input:focus,select:focus{
 
 /* .main-btn {
     padding:9px 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--text);
     border: none;
     cursor: pointer;
     margin-top: 25px;
@@ -174,7 +191,7 @@ input:focus,select:focus{
 } */
 
 /* .main-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--accent);
 } */
 #fee-management > div{
     display: flex;
@@ -192,7 +209,7 @@ input:focus,select:focus{
 
 td > p{
     margin-left: 20px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--muted);
     width: 113%;
     font-size: 20px;
     font-weight: bold;
@@ -210,7 +227,7 @@ td > p{
     padding: 10px;
     margin-bottom: 20px;
     font-size: 16px;
-    border: 1px solid #000000;
+    border: 1px solid var(--muted);
     border-radius: 4px;
 }
 
@@ -222,18 +239,18 @@ td > p{
 }
 
 #payment-details-table thead {
-    background-color: #640505;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--on-primary);
 }
 
 #payment-details-table th, #payment-details-table td {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     text-align: center;
 }
 
 #payment-details-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: var(--surface-alt);
 }
 
 /* Responsive Table */

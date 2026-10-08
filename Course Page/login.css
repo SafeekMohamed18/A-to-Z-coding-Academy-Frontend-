@@ -1,3 +1,20 @@
+:root {
+    --background: #F8FAFC;
+    --card: #FFFFFF;
+    --primary: #2563EB;
+    --accent: #F97316;
+    --text: #0F172A;
+    --muted: #64748B;
+    --surface-alt: #EFF6FF;
+    --border: #E2E8F0;
+    --primary-hover: #1D4ED8;
+    --accent-hover: #EA580C;
+    --success: #16A34A;
+    --danger: #DC2626;
+    --on-primary: #FFFFFF;
+    --on-accent: #0F172A;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +26,8 @@ body {
     line-height: 1.6;
     padding-top: 60px;
     /* Space for the fixed navbar */
-    background-color: #333;
-    /* Background color */
-    color: #fff;
-    /* Text color */
+    background-color: var(--background);
+    color: var(--on-primary);
 }
 
 /* Navbar Styling */
@@ -24,8 +39,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4b0000;
-    /* Maroon background */
+    background-color: var(--card);
     padding: 10px 20px;
     z-index: 1000;
 }
@@ -37,7 +51,7 @@ body {
 }
 
 .navbar .logo h1 {
-    color: #fff;
+    color: var(--text);
 }
 
 .navbar .logo img {
@@ -54,15 +68,14 @@ body {
 }
 
 .navbar .nav-links li a {
-    color: #fff;
+    color: var(--text);
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar .nav-links li a:hover {
-    color: #a20000;
-    /* Maroon hover color */
+    color: var(--accent);
     transform: scale(1.05);
 }
 
@@ -86,10 +99,10 @@ body {
 
 .container {
     width: 18%;
-    background: linear-gradient(0deg, #ffffff 0%, #faeceb 100%);
+    background: var(--card);
     border-radius: 20px;
     padding: 25px 35px;
-    border: 5px solid #ffffff;
+    border: 1px solid var(--muted);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin: 20px;
     box-sizing: border-box;
@@ -105,15 +118,12 @@ body {
     text-decoration: none;
     font-size: 24px;
     cursor: pointer;
-    color: #252525;
-    /* Maroon close button */
+    color: var(--text);
     transition: color 0.3s ease;
 }
 
 .close-btn:hover {
-    color: white;
-    color: #8c0000;
-    /* Darker maroon on hover */
+    color: var(--accent);
     transform: scale(1.1);
 }
 
@@ -121,7 +131,7 @@ body {
     text-align: center;
     font-weight: 600;
     font-size: 24px;
-    color: #5f312d;
+    color: var(--text);
     margin-bottom: 20px;
 }
 
@@ -136,13 +146,13 @@ body {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #5f312d;
+    color: var(--muted);
     font-weight: bold;
 }
 
 input {
     width: 100%;
-    background: #ffffff;
+    background: var(--background);
     border: none;
     padding: 15px;
     border-radius: 20px;
@@ -153,20 +163,20 @@ input {
 }
 
 input::placeholder {
-    color: #aaaaaa;
+    color: var(--muted);
 }
 
 input:focus {
     outline: none;
-    border-color: #573634;
+    border-color: var(--accent);
 }
 
 .login-btn {
     display: block;
     width: 100%;
     font-weight: bold;
-    background: linear-gradient(45deg, #6b3e3b 0%, #a7423b 100%);
-    color: #ffffff;
+    background: var(--primary);
+    color: var(--text);
     padding: 15px;
     margin: 20px 0;
     border-radius: 20px;
@@ -177,20 +187,20 @@ input:focus {
 }
 
 .login-btn:hover {
-    background: linear-gradient(45deg, #5a2f2f 0%, #8d3e3e 100%);
+    background: var(--accent);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
 
 .login-btn:active {
-    background: linear-gradient(45deg, #4e2a2a 0%, #7b3b3b 100%);
+    background: var(--primary);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transform: translateY(0);
 }
 
 .display-message {
     margin-top: 20px;
-    color: red;
+    color: var(--accent);
     font-size: 14px;
     text-align: center;
 }
@@ -208,9 +218,8 @@ input:focus {
 
 /* Footer Section */
 .footer {
-    background-color: #000;
-    /* Black background */
-    color: white;
+    background-color: var(--card);
+    color: var(--text);
     padding: px 20px;
     text-align: center;
     margin-top: 100px;
@@ -254,7 +263,7 @@ footer .footer {
 }
 
 .social-icon a {
-    color: #f2f4f7;
+    color: var(--text);
     transition: transform 0.3s ease;
 }
 
@@ -264,33 +273,31 @@ footer .footer {
 
 .social-icon a:hover {
     transform: scale(1.05);
-    color: #a20000;
+    color: var(--accent);
 }
 
 
 /* Additional Navbar and Footer Styling for the Logo */
 .navbar .logo h1 {
-    color: #fff;
+    color: var(--text);
     font-size: 24px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .navbar .logo h1:hover {
-    color: #a20000;
-    /* Maroon hover */
+    color: var(--accent);
 }
 
 .footer-logo h1 {
-    color: #fff;
+    color: var(--text);
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .footer-logo h1:hover {
-    color: #a20000;
-    /* Maroon hover */
+    color: var(--accent);
 }
 
 .navbar h1,

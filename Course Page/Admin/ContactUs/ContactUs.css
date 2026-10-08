@@ -1,3 +1,20 @@
+:root {
+    --background: #F8FAFC;
+    --card: #FFFFFF;
+    --primary: #2563EB;
+    --accent: #F97316;
+    --text: #0F172A;
+    --muted: #64748B;
+    --surface-alt: #EFF6FF;
+    --border: #E2E8F0;
+    --primary-hover: #1D4ED8;
+    --accent-hover: #EA580C;
+    --success: #16A34A;
+    --danger: #DC2626;
+    --on-primary: #FFFFFF;
+    --on-accent: #0F172A;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -14,8 +31,8 @@ body{
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: #4b0000; /* Maroon background */
-    color: #fff;
+    background-color: var(--card);
+    color: var(--text);
     align-items: center;
     padding: 10px 25px;
     height: 90px;
@@ -41,10 +58,10 @@ nav .logo img {
 #logo-container p{
     font-size: 25px;
     font-weight: bolder;
-    color: rgb(0, 0, 0);
+    color: var(--text);
 }
 #logo-container p::first-letter{
-    color: orange;
+    color: var(--accent);
     font-size: 30px;
 }
 .navebar-menu-toggle{
@@ -74,7 +91,7 @@ nav>ul>li>a{
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
-    color: #1d232c;
+    color: var(--text);
     cursor: pointer;
 }
 
@@ -87,12 +104,12 @@ nav>ul>li>a{
 .side-navebar{
     width: 20%;
     height: 100%;
-    background-color:#1d232c;
+    background-color: var(--card);
     position: fixed;
     top: 0;
     right: -60%;
     padding: 20px;
-    color: white;
+    color: var(--text);
     transition: 1s;
     margin: 0;
     z-index: 5;
@@ -118,7 +135,7 @@ nav>ul>li>a{
 }
 .side-navebar-link a{
     text-decoration: none;
-    color: white;
+    color: var(--text);
     font-size: 1.4rem;
     cursor: pointer;
     transition: transform 0.3s, color 0.3s; /* Add transition for smooth effect */
@@ -126,7 +143,7 @@ nav>ul>li>a{
 }
 
 .side-navebar-link a:hover {
-    color: red; /* Change color to red on hover */
+    color: var(--accent);
      transform: scale(1.1); /* Scale up the link on hover */
     
 }
@@ -135,7 +152,7 @@ nav>ul>li>a{
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background: var(--accent);
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -144,7 +161,7 @@ a:hover::after{
     width: 100%;
 }
 .logout > a{
-    color: red;
+    color: var(--accent);
 }
 
 

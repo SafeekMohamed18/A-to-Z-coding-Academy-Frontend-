@@ -1,3 +1,20 @@
+:root {
+    --background: #F8FAFC;
+    --card: #FFFFFF;
+    --primary: #2563EB;
+    --accent: #F97316;
+    --text: #0F172A;
+    --muted: #64748B;
+    --surface-alt: #EFF6FF;
+    --border: #E2E8F0;
+    --primary-hover: #1D4ED8;
+    --accent-hover: #EA580C;
+    --success: #16A34A;
+    --danger: #DC2626;
+    --on-primary: #FFFFFF;
+    --on-accent: #0F172A;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -14,8 +31,8 @@ body{
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: #4b0000; /* Maroon background */
-    color: #fff;
+    background-color: var(--card);
+    color: var(--text);
     align-items: center;
     padding: 10px 25px;
     height: 90px;
@@ -67,7 +84,7 @@ nav>ul>li>a{
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
-    color: #1d232c;
+    color: var(--text);
     cursor: pointer;
 }
 
@@ -80,12 +97,12 @@ nav>ul>li>a{
 .side-navebar{
     width: 20%;
     height: 100%;
-    background-color:#1d232c;
+    background-color: var(--card);
     position: fixed;
     top: 0;
     right: -60%;
     padding: 20px;
-    color: white;
+    color: var(--text);
     transition: 1s;
     margin: 0;
     z-index: 5;
@@ -110,7 +127,7 @@ nav>ul>li>a{
 }
 .side-navebar-link a{
     text-decoration: none;
-    color: white;
+    color: var(--text);
     font-size: 1.4rem;
     cursor: pointer;
     transition: transform 0.3s, color 0.3s; /* Add transition for smooth effect */
@@ -118,7 +135,7 @@ nav>ul>li>a{
 }
 
 .side-navebar-link a:hover {
-    color: red; /* Change color to red on hover */
+    color: var(--accent);
      transform: scale(1.1); /* Scale up the link on hover */
     
 }
@@ -127,7 +144,7 @@ a:hover::after{
     width: 100%;
 }
 .logout > a{
-    color: red;
+    color: var(--accent);
 }
 
 
@@ -141,7 +158,7 @@ a:hover::after{
     width: 100%;
     height: 100%;
     padding-bottom: 40px;
-    background-color:lightgrey;
+    background-color: var(--card);
     border-radius: 25px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
@@ -153,7 +170,7 @@ a:hover::after{
     padding: 20px 25px;
 }
 .heading > h1{
-    color:#4b0000;
+    color: var(--text);
     font-size: 40px;
 }
 #search-container{
@@ -186,7 +203,7 @@ input{
     width: 100%;
     height: 35px;
     border-radius: 5px;
-    background-color:white;
+    background-color: var(--card);
     outline: none;
     border: none;
     padding:0px 10px;
@@ -220,14 +237,14 @@ label{
 
 }
 #table-container > .table1 > tr:hover{
-    background-color: lightgrey;
+    background-color: var(--surface-alt);
 }
 th{
-    border:2px solid black;
+    border:2px solid var(--muted);
     border-radius: 10px;
 }
 #table-container > .table1 td{
-   border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--muted);
    text-align: center;
 }
 

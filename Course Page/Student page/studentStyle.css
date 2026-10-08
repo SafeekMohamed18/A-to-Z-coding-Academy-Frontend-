@@ -1,12 +1,30 @@
+:root {
+    --background: #F8FAFC;
+    --card: #FFFFFF;
+    --primary: #2563EB;
+    --accent: #F97316;
+    --text: #0F172A;
+    --muted: #64748B;
+    --surface-alt: #EFF6FF;
+    --border: #E2E8F0;
+    --primary-hover: #1D4ED8;
+    --accent-hover: #EA580C;
+    --success: #16A34A;
+    --danger: #DC2626;
+    --on-primary: #FFFFFF;
+    --on-accent: #0F172A;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #636363; /* Light blue background for body */
+    background-color: var(--background);
+    color: var(--text);
 }
 
 .custom-link {
-    color: aliceblue; 
+    color: var(--muted);
     text-decoration: none; 
     transition: background-color 0.3s, color 0.3s, border-radius 0.3s; 
     padding: 10px; 
@@ -14,23 +32,21 @@ body {
 }
 
 .nav-item a {
-    color: #fff;
+    color: var(--text);
     font-size: 24px;
     transition: transform 0.3s, color 0.3s; /* Add transition for smooth scaling and color change */
    
 }
 
 .nav-item a:hover {
-    color: #535151;
+    color: var(--accent);
     transform: scale(1.04); /* Scale the link on hover */
-    background-color: white; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--card);
 }
 
 section h2 {
     margin-bottom: 20px;
-    padding-bottom: 10px;
-    color: #550404; /* Coral orange for section headings */
+    color: var(--accent);
 }
 
 .form-group {
@@ -40,29 +56,30 @@ section h2 {
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #303c6c; /* Dark blue for form labels */
+    color: var(--muted);
 }
 
 .form-group input {
     width: 100%;
     padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
+    background-color: var(--card);
+    color: var(--text);
+    border: 1px solid var(--muted);
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 .form-group button {
     padding: 10px 15px;
-    background-color: #f4976c; /* Coral orange for button background */
+    background-color: var(--primary);
     border: none;
     border-radius: 5px;
-    color: #fff; /* White text on button */
+    color: var(--on-primary);
     cursor: pointer;
 }
 
 .form-group button:hover {
-    background-color: #303c6c; /* Dark blue for button hover */
+    background-color: var(--primary-hover);
 }
 
 table {
@@ -72,7 +89,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
 }
 
 th, td {
@@ -81,8 +98,13 @@ th, td {
 }
 
 th {
-    background-color: #323333; /* Dark blue for table headers */
-    color: white;
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+
+td {
+    background-color: var(--card);
+    color: var(--text);
 }
 
 .modal {
@@ -94,19 +116,19 @@ th {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black with opacity */
+    background-color: rgba(11, 16, 32, 0.4);
 }
 
 .modal-content {
-    background-color: #fff; /* White background for modal */
+    background-color: var(--card);
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid var(--border);
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
 .close {
-    color: #aaa;
+    color: var(--muted);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -114,15 +136,15 @@ th {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: var(--accent);
     text-decoration: none;
     cursor: pointer;
 }
 
 #container-footer {
-    background-color:rgb(77, 2, 2); /* Light peach background for the footer */
+    background-color: var(--card);
     padding: 20px; /* Add some padding */
-    color: #ffffff; /* Dark text color for readability */
+    color: var(--text);
     font-family: Arial, sans-serif; /* Simple font for readability */
 }
 
@@ -146,7 +168,7 @@ th {
 
 h5, h4 {
     margin: 0; /* Remove default margin */
-    color: #303c6c; /* Dark blue for footer headings */
+    color: var(--muted);
 }
 
 p {
@@ -178,11 +200,11 @@ p {
 
 .course-card {
     flex: 0 1 300px;   /* Each card will take up to 300px but shrink if necessary */
-    border: 1px solid #ccc;
+    border: 1px solid var(--muted);
     border-radius: 8px;
     padding: 16px;
     margin: 10px;
-    background-color: #fbe8a6; /* Light peach background for course cards */
+    background-color: var(--card);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;  /* Center the text inside the card */
 }
@@ -190,13 +212,13 @@ p {
 .course-card h3 {
     margin-top: 0;
     font-size: 1.5em;
-    color: #303c6c; /* Dark blue for course card titles */
+    color: var(--accent);
 }
 
 .course-card p {
     margin: 8px 0;
     font-size: 1em;
-    color: #555;
+    color: var(--muted);
 }
 .courses-container {
     display: flex;  /* Align items in a row */
@@ -205,10 +227,10 @@ p {
 
 .course-card {
     flex: 0 0 auto; /* Prevent flex items from shrinking */
-    border: 1px solid #ccc;
+    border: 1px solid var(--muted);
     border-radius: 8px;
     padding: 16px;
-    background-color: #fbe8a6; /* Light peach background for course cards */
+    background-color: var(--card);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;  /* Center the text inside the card */
 }

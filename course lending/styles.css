@@ -1,4 +1,21 @@
 /* Global Styles */
+:root {
+    --background: #F8FAFC;
+    --card: #FFFFFF;
+    --primary: #2563EB;
+    --accent: #F97316;
+    --text: #0F172A;
+    --muted: #64748B;
+    --surface-alt: #EFF6FF;
+    --border: #E2E8F0;
+    --primary-hover: #1D4ED8;
+    --accent-hover: #EA580C;
+    --success: #16A34A;
+    --danger: #DC2626;
+    --on-primary: #FFFFFF;
+    --on-accent: #0F172A;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +26,8 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     padding-top: 60px; /* Space for the fixed navbar */
-    background-color: #333; /* Background color */
-    color: #fff; /* Text color */
+    background-color: var(--background);
+    color: var(--text);
 }
 
 /* Navbar Styling */
@@ -22,7 +39,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4b0000; /* Maroon background */
+    background-color: var(--card);
     padding: 10px 20px;
     z-index: 1000;
 }
@@ -33,7 +50,7 @@ body {
 }
 
 .navbar .logo h1 {
-    color: #fff;
+    color: var(--text);
 }
 .navbar .logo img{
     width: 10%;
@@ -49,19 +66,19 @@ body {
 }
 
 .navbar .nav-links li a {
-    color: #fff;
+    color: var(--text);
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar .nav-links li a:hover {
-    color: #a20000; /* Maroon hover color */
+    color: var(--accent);
     transform: scale(1.05);
 }
 
 .navbar .login-btn  {
-    background-color: #a20000; /* Maroon button */
+    background-color: var(--primary);
     border: none;
     padding: 10px 20px;
    
@@ -70,20 +87,20 @@ body {
 }
 .login-btn a{
     text-decoration: none;
-    color: #fff;
+    color: var(--on-primary);
     font-size: 16px;
     cursor: pointer;
 }
 
 .navbar .login-btn:hover {
-    background-color: #8c0000; /* Darker maroon hover */
+    background-color: var(--primary-hover);
     transform: scale(1.05);
 }
 
 /* Hero Section */
 .hero {
-    background-color: #000; /* Black background */
-    color: #fff;
+    background-color: var(--primary);
+    color: #FFFFFF;
     padding: 80px 20px;
     text-align: center;
 }
@@ -98,16 +115,16 @@ body {
 }
 
 .hero .cta-btn {
-    background-color: #a20000; /* Maroon button */
+    background-color: var(--accent);
     padding: 10px 20px;
-    color: white;
+    color: var(--on-accent);
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero .cta-btn:hover {
-    background-color: #8c0000; /* Darker maroon hover */
+    background-color: var(--accent-hover);
     transform: scale(1.05);
 }
 
@@ -115,13 +132,13 @@ body {
 .courses {
     padding: 60px 20px;
     text-align: center;
-    background-color: #333; /* Dark gray background for contrast */
+    background-color: var(--background);
 }
 
 .courses h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #fff;
+    color: var(--text);
 }
 
 .course-cards {
@@ -131,7 +148,8 @@ body {
 }
 
 .course-card {
-    background-color: #000; /* Black background for course cards */
+    background-color: var(--card);
+    border: 1px solid var(--border);
     padding: 20px;
     border-radius: 10px;
     width: 30%;
@@ -143,11 +161,11 @@ body {
 
 .course-card h3 {
     margin: 10px 0;
-    color: #a20000; /* Maroon text for course titles */
+    color: var(--accent);
 }
 
 .course-card p {
-    color: #fff;
+    color: var(--text);
     margin-bottom: 15px;
 }
 
@@ -173,17 +191,17 @@ body {
 /* About Section */
 .about {
     padding: 40px 20px;
-    background-color: #000; /* Black background */
+    background-color: var(--card);
     text-align: center;
-    color: #fff;
+    color: var(--text);
     margin: 20px 0;
 }
 
 
 /* Footer Section */
 .footer {
-    background-color: #000; /* Black background */
-    color: white;
+    background-color: var(--card);
+    color: var(--text);
     padding: 10px 20px;
     text-align: center;
     margin-top: 40px;
@@ -212,7 +230,7 @@ footer .footer{
     transition: transform 0.3s ease;
 }
 .social-icon a{
-    color: #f2f4f7;
+    color: var(--text);
     transition: transform 0.3s ease;
 }
 .social-icon:hover{
@@ -220,7 +238,7 @@ footer .footer{
 }
 .social-icon a:hover{
     transform: scale(1.05);
-    color: #a20000;
+    color: var(--accent);
 }
 /* .footer-socials {
     display: flex;
@@ -248,30 +266,30 @@ footer .footer{
 }
 
 .footer-socials .social-link:hover {
-    color: #a20000;
+    color: var(--accent);
 } */
 
 /* Additional Navbar and Footer Styling for the Logo */
 .navbar .logo h1 {
-    color: #fff;
+    color: var(--text);
     font-size: 24px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .navbar .logo h1:hover {
-    color: #a20000; /* Maroon hover */
+    color: var(--accent);
 }
 
 .footer-logo h1 {
-    color: #fff;
+    color: var(--text);
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .footer-logo h1:hover {
-    color: #a20000; /* Maroon hover */
+    color: var(--accent);
 }
 
 .navbar h1, .footer h1 {

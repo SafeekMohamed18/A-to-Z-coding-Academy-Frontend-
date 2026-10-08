@@ -1,3 +1,20 @@
+:root {
+    --background: #F8FAFC;
+    --card: #FFFFFF;
+    --primary: #2563EB;
+    --accent: #F97316;
+    --text: #0F172A;
+    --muted: #64748B;
+    --surface-alt: #EFF6FF;
+    --border: #E2E8F0;
+    --primary-hover: #1D4ED8;
+    --accent-hover: #EA580C;
+    --success: #16A34A;
+    --danger: #DC2626;
+    --on-primary: #FFFFFF;
+    --on-accent: #0F172A;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -7,15 +24,15 @@
 
 body{
     height: 100vh;
-    background-color: lightslategray;
+    background-color: var(--background);
 }
 /* Navebar */
 
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: #4b0000; /* Maroon background */
-    color: #fff;
+    background-color: var(--card);
+    color: var(--text);
     align-items: center;
     padding: 10px 25px;
     height: 90px;
@@ -28,7 +45,7 @@ nav{
 }
 
 .navbar .logo h1 {
-    color: #fff;
+    color: var(--text);
 }
 .navbar .logo img{
     width: 10%;
@@ -44,7 +61,7 @@ nav{
 
 .fa-bars{
     cursor: pointer;
-    color: #fff;
+    color: var(--text);
 }
 .fa-bars:active{
     scale: 0.9;
@@ -57,12 +74,12 @@ nav{
 .side-navebar{
     width: 20%;
     height: 100%;
-    background-color:#1d232c;
+    background-color: var(--card);
     position: fixed;
     top: 0;
     right: -60%;
     padding: 20px;
-    color: white;
+    color: var(--text);
     transition: 1s;
     margin: 0;
     z-index: 5;
@@ -87,7 +104,7 @@ nav{
 }
 .side-navebar-link a{
     text-decoration: none;
-    color: white;
+    color: var(--text);
     font-size: 1.4rem;
     cursor: pointer;
     transition: transform 0.3s, color 0.3s; /* Add transition for smooth effect */
@@ -95,7 +112,7 @@ nav{
 }
 
 .side-navebar-link a:hover {
-    color: red; /* Change color to red on hover */
+    color: var(--accent);
      transform: scale(1.1); /* Scale up the link on hover */
     
 }
@@ -104,7 +121,7 @@ nav{
     content: '';
     width: 0%;
     height: 2px;
-    background: #f44336;
+    background: var(--accent);
     display: block;
     margin: auto;
     transition: 0.5s;
@@ -113,7 +130,7 @@ a:hover::after{
     width: 100%;
 }
 .logout > a{
-    color: red;
+    color: var(--accent);
 }
 
 /* Form */
@@ -123,20 +140,20 @@ a:hover::after{
       display: block;
       font-size:16px;
       font-weight: bold;
-      color: black;
+    color: var(--muted);
   }
   
   input {
       width: 100%;
       padding: 8px;
       box-sizing: border-box;
-      border: 1px solid #ccc;
+    border: 1px solid var(--muted);
       border-radius: 6px;
       font-size: 15px;
   }
   
   input:focus {
-      border-color: #007bff;
+    border-color: var(--primary);
       outline: none;
   }
   
@@ -148,8 +165,8 @@ a:hover::after{
   .main-btn {
       width: 100%;
       padding:9px 10px;
-      background-color: #007bff;
-      color: #fff;
+    background-color: var(--primary);
+    color: var(--on-primary);
       border: none;
       cursor: pointer;
       margin-top: 25px;
@@ -159,7 +176,7 @@ a:hover::after{
   }
 
 .main-btn:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-hover);
 }
 
 #course-offerings > div{
@@ -176,7 +193,7 @@ a:hover::after{
 }
 
 #course-offerings-message{
-    color: green;
+    color: var(--success);
 }
 
 .img-container img{
